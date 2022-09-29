@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require "thor"
+require "fileutils"
 require "securerandom"
 
 class Rodagen < Thor::Group
@@ -227,6 +228,10 @@ tables = [:account_sms_codes,
     else
       say "No licence created", :red
     end
+  end
+
+  def run_bundle_install
+    FileUtils.cd(name) { system("bundle install") }
   end
 end
 
