@@ -1,0 +1,28 @@
+- @page_title = "Security Log"
+
+%a.d-block.btn.btn-secondary.w-50.mx-auto.mb-5{href: "/account"} Back to Account
+
+%h2.text-center.mb-3 Security Log
+
+%p.mb-5.text-center
+  Review the access to your account
+  %br
+    %small (last 100 actions)
+
+.row
+  .col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
+    != partial("partials/security_log_pagination")
+
+    %table.table.text-center.mb-5
+      %thead
+        %td ACTION
+        %td DATE
+        %td IP
+      %tbody
+        - @security_logs.each do |security_log|
+          %tr
+            %td{class: format_auth_log_action(security_log[:message])}!= security_log[:message] 
+            %td!= security_log[:at].strftime("%a %d %b %Y - %k:%M:%S")
+            %td!= JSON.parse(security_log[:metadata])["ip"]
+    
+    != partial("partials/security_log_pagination")

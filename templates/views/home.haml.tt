@@ -1,0 +1,15 @@
+- @page_title = "Home"
+
+%h1.mb-5.mt-3.text-center Your settings:
+
+%ul.mb-5
+  %li Postgresql specific credentials : <%= standard_db_credentials? ? "no" : "yes" %>
+  %li Rodauth included : <%= rodauth? ? "yes" : "no" %>
+  %li Bootstrap included : <%= bootstrap? ? "yes" : "no" %>
+  %li AppHelpers connected : #{app_helpers_connected? ? "yes" : "no"}
+  %li ViewHelpers connected : #{view_helpers_connected? ? "yes" : "no"}
+  <% if rodauth? %>
+  %li Mailhelpers connected : #{MailHelpers.connected? ? "yes" : "no"}
+  <% end %>
+  
+%h2.text-center Now go get started !

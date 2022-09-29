@@ -1,0 +1,128 @@
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.bg-gray {
+  background-color: var(--bs-gray);
+}
+
+.bg-gray-md {
+  background-color: #f1f1f1;
+}
+
+.bg-gainsboro {
+  background-color: #DCDCDC;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+<% if bootstrap? %>
+.tooltip {
+  position: relative;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  top: -5px;
+  right: 105%;
+}
+
+.tooltip-text {
+  display: inline-block;
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+<% end %>
+.flash {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-decoration {
+  text-decoration: none;
+}
+
+/* RODAUTH FORMS */
+
+.rodauth {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#create-account-form input[type=submit] {
+  display: block;
+  max-width: 400px;
+  margin: 30px auto;
+}
+
+.rodauth-login-form-footer-links-heading {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.rodauth-login-footer-links {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rodauth-login-footer-links li {
+  margin-bottom: 10px;
+}
+
+.rodauth-two-factor-auth-links {
+  margin-top: 60px;
+  padding-left: 0;
+}
+
+.rodauth-two-factor-auth-links li {
+  width: 200px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: #0d6efd;
+  padding: 5px 10px;
+  border-radius: 3px;
+  list-style: none;
+}
+
+.rodauth-two-factor-auth-links li a {
+  text-decoration: none;
+  color: white;
+}
+
+#otp-auth-form {
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+#otp-auth-form div {
+  width: 235px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+#otp-auth-code {
+  text-align: center;
+}
+
+#qrcode-otp {
+  max-width: 456px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#recovery-codes {
+  text-align: center;
+}
