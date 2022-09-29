@@ -1,6 +1,6 @@
 # Rodanew
 
-[Roda](http://roda.jeremyevans.net/index.html)-[Sequel](http://sequel.jeremyevans.net/)-[Rodauth](http://rodauth.jeremyevans.net/) app generator, built with [Thor](https://github.com/rails/thor).
+[Roda](http://roda.jeremyevans.net/index.html) - [Sequel](http://sequel.jeremyevans.net/) - [Rodauth](http://rodauth.jeremyevans.net/) app generator, built with [Thor](https://github.com/rails/thor).
 
 It uses `Thor::Group` and `Thor::Actions` features.
 
@@ -46,18 +46,18 @@ If you don't use a specific postgresql user for your database (like in tests and
 
 Assuming the symlink you ceated is `rodanew` :
 
-- `cd` in the directory where you want to create your app.
+- `cd` in the directory where you want to create your app
 
 - `$ rodanew the_name_of_your_app` with no other options basically :
-  - creates an app named {name_of_your_app} with Roda, Sequel (Postgresql adapter), Rodauth and Bootstrap setup
+  - creates an app named `the_name_of_your_app` with Roda, Sequel (Postgresql adapter), Rodauth and Bootstrap setup
   - creates Rakefile with basic tasks
   - creates test files to test Rodauth setup
   - uses the value of the ENV variable `PG_CREDENTIALS` , `MY_EMAIL` and `MY_NAME` to populate the `.env` file
 
 - options are :
-  - `--db_password` : use this password in the .env file, instead of using the one on the ENV["PG_CREDENTIALS"]. It then assumes that the Postgresql username is the same as the app name
-  - `--no_rodauth` : don't setup Rodauth. It doesn't create the specific rodauth test file either, and doesn't require any specific ENV variable being set
-  - `--no_bs` : don't use Bootstrap. The layout file won't require it
+  - `--db-password` : use this password in the `.env` file, instead of using the one on the `ENV["PG_CREDENTIALS"]`. It then assumes that the Postgresql username is the same as the app name
+  - `--no-rodauth` : don't setup Rodauth. It doesn't create the specific rodauth test file either, and doesn't require any specific `ENV` variable being set
+  - `--no-bs` : don't use Bootstrap. The layout file won't require it
 
 If you use Rodauth, `cd` into your freshly created app and run :
 - `$ bundle install`
