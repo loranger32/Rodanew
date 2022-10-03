@@ -13,6 +13,7 @@ class Rodagen < Thor::Group
   class_option :"no-rodauth", type: :boolean, default: false
   class_option :"no-bs", type: :boolean, default: false
   class_option :"db-password", type: :string
+  class_option :"no-git", type: :boolean, default: false
 
   def self.exit_on_failure?
     true
@@ -28,6 +29,10 @@ class Rodagen < Thor::Group
 
   def bootstrap?
     !options[:"no-bs"]
+  end
+
+  def git?
+    !options[:"no-git"]
   end
 
   # Needed when executing this file from a symlink
@@ -241,7 +246,7 @@ tables = [:account_sms_codes,
   end
 
   def create_git_repo
-    FileUtils.cd(name) { system("git init") }
+    FileUtils.cd(name) { system("git init") } if git?
   end
 end
 

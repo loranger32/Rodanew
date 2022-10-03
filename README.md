@@ -54,13 +54,15 @@ Assuming the symlink you ceated is `rodanew` :
   - creates test files to test Rodauth setup
   - uses the value of the ENV variable `PG_CREDENTIALS` , `MY_EMAIL` and `MY_NAME` to populate the `.env` file
   - run `bundle install` automatically after app creation
+  - initialize a git repo
 
 - options are :
   - `--db-password` : use this password in the `.env` file, instead of using the one on the `ENV["PG_CREDENTIALS"]`. It then assumes that the Postgresql username is the same as the app name
   - `--no-rodauth` : don't setup Rodauth. It doesn't create the specific rodauth test file either, and doesn't require any specific `ENV` variable being set
   - `--no-bs` : don't use Bootstrap. The layout file won't require it
+  - `--no-git` : don't create a git repo
 
-If you use Rodauth, `cd` into your freshly created app and run :
+If you use Rodauth, `cd` into your newly created app and run :
 - `$ rake db:migrate`
 - `$ rake db:seed` (optionnal)
 - `$ rake` (runs the tests to confirm the Rodauth setup is working)
