@@ -20,3 +20,29 @@ end
 
 desc "create_example apps"
 task examples: [:example_rodauth, :example_no_rodauth]
+
+desc "Test the with_rodauth template app"
+task :test_rodauth do
+  FileUtils.cd("/tmp") do
+    system("rodanew rodagen --no-git")
+    FileUtils.cd("rodagen") do
+      system("rake db:migrate")
+      system("rake")
+    end
+    system("rm -r rodagen")
+  end
+end
+
+desc "Test the without_rodauth template app"
+task :test_no_rodauth do
+  FileUtils.cd("/tmp") do
+    system("rodanew rodagen --no-rodauth --no-git")
+    FileUtils.cd("rodagen") do
+      system("rake")
+    end
+    system("rm -r rodagen")
+  end
+end
+
+desc "Test both template apps"
+task test: [:test_rodauth, :test_no_rodauth]

@@ -85,9 +85,13 @@ Here are some other roda app generators that I'm aware of :
 
 If you know another one, you're welcome to add it.
 
-# Next steps
+# Test
 
-- add some basic tests
+A basic rake `test` task is provided. It creates two apps (with and without Rodauth) in the /tmp directory. It runs the migrations for the Rodauth app, and then runs the tests. For the app without Rodauth, it simply runs the tests (no migration).
+
+After testing, both app directories are removed.
+
+Tests assumes a postgresql database named `rodagen_test`, and the `ENV` variable `PG_CREDENTIALS` being set.
 
 # Licence
 
