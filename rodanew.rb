@@ -239,6 +239,10 @@ tables = [:account_sms_codes,
   def run_bundle_install
     FileUtils.cd(name) { system("bundle install") }
   end
+
+  def create_git_repo
+    FileUtils.cd(name) { system("git init") }
+  end
 end
 
 begin

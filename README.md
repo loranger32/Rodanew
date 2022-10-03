@@ -81,7 +81,6 @@ If you know another one, you're welcome to add it.
 
 - add some basic tests
 - add examples of generated apps in the repo
-- create git repository
 
 # Licence
 
