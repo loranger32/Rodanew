@@ -79,9 +79,9 @@ If you know another one, you're welcome to add it.
 
 # Next steps
 
-- delete all created files if an error occurs during app generation (need to do it mannually at the moment)
 - add some basic tests
-- add examples of generated apps in the repo.
+- add examples of generated apps in the repo
+- create git repository
 
 # Licence
 
