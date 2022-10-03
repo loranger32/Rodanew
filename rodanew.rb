@@ -4,6 +4,8 @@ require "thor"
 require "fileutils"
 require "securerandom"
 
+app_name = ARGV[0]
+
 class Rodagen < Thor::Group
   include Thor::Actions
 
@@ -11,6 +13,10 @@ class Rodagen < Thor::Group
   class_option :"no-rodauth", type: :boolean, default: false
   class_option :"no-bs", type: :boolean, default: false
   class_option :"db-password", type: :string
+
+  def self.exit_on_failure?
+    true
+  end
 
   def year
     Time.now.year
@@ -235,4 +241,13 @@ tables = [:account_sms_codes,
   end
 end
 
-Rodagen.start
+begin
+  Rodagen.start
+rescue => e
+  puts "Failed to create new app: #{app_name}"
+  if File.directory?(app_name)
+    FileUtils.remove_entry_secure(app_name)
+    puts "Newly created files successfully removed"
+  end
+  raise e
+end
