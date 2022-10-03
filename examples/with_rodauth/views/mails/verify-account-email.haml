@@ -1,0 +1,13 @@
+%body{style: "font-family: Arial, sans-serif"}
+  %h1{style: "width: 200px; margin: 25px auto 0 auto; text-align: center; font-size: 2rem, font-weight: 300"} with_rodauth
+
+  %h2{style: "text-align: center"} Verify your account
+
+  %p You created an account on with_rodauth with this email. Please verify your account by clicking on the link below or by copying this link in your browser.
+
+  %p
+    %a{href: rodauth.verify_account_email_link}!= rodauth.verify_account_email_link
+
+  %p
+    %small The with_rodauth Team
+

@@ -1,0 +1,8 @@
+- if flash["error"]
+  %p.flash.alert.alert-danger.alert-dismissible.fade.show.text-center{role: "alert"}
+    = flash["error"]
+    %button.btn-close{type: "button", "data-bs-dismiss" => "alert", "aria-label" => "Close"}
+- if flash["notice"]
+  %p.flash.alert.alert-success.alert-dismissible.fade.show.text-center{role: "alert"}
+    = flash["notice"]
+    %button.btn-close{type: "button", "data-bs-dismiss" => "alert", "aria-label" => "Close"}
