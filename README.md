@@ -14,6 +14,10 @@ But most of the times, I like to start with a full authentication setup with Rod
 
 And it's not that difficult to do with a command line utility like Thor.
 
+# Examples
+
+You can check the two generated setups in the examples directory, one with rodauth setup, the other without.
+
 # Do you want to use it ?
 
 Probably not. Roda, Sequel and Rodauth are highly customizable and my current setup won't probably suit your needs.
@@ -35,12 +39,14 @@ Simply download the repo where you see fit.
 
 ## Optionnal
 
-If you intend to use Rodauth, the following ENV variables must be set :
+If you intend to use Rodauth, the following `ENV` variables must be set :
 - MY_EMAIL : the email address the app sends an email to when a new user signs up
 - MY_NAME : your user name, used in the seed data to create the seed accounts. It's also used in the Licence.
 
-If you don't use a specific postgresql user for your database (like in tests and development), set the following ENV variable :
+If you don't use a specific postgresql user for your database (like in tests and development), set the following `ENV` variable :
 - PG_CREDENTIALS : `your_pg_username:your_pg_password`
+
+If the databases belongs to a specific user, it must have the same name as your project, and you need to provide the password as an option when creating the app (see below).
 
 # Usage
 
@@ -82,7 +88,6 @@ If you know another one, you're welcome to add it.
 # Next steps
 
 - add some basic tests
-- add examples of generated apps in the repo
 
 # Licence
 
