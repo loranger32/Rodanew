@@ -37,11 +37,13 @@ Simply download the repo where you see fit.
 - create a symlink from a directory in your `PATH` that points to `path/to/your/rodanew/repo/rodanew.rb`
 - create two Postgresql databases, one for development and for the tests. Names MUST be `app_name_development` and `app_name_test`
 
-## Optionnal
+## Optional
 
 If you intend to use Rodauth, the following `ENV` variables must be set :
 - MY_EMAIL : the email address the app sends an email to when a new user signs up
 - MY_NAME : your user name, used in the seed data to create the seed accounts. It's also used in the Licence.
+
+Also if you want to use Rodauth, both DB's need the [citext extension](https://www.postgresql.org/docs/15/citext.html).
 
 If you don't use a specific postgresql user for your database (like in tests and development), set the following `ENV` variable :
 - PG_CREDENTIALS : `your_pg_username:your_pg_password`
@@ -50,7 +52,7 @@ If the databases belongs to a specific user, it must have the same name as your 
 
 # Usage
 
-Assuming the symlink you ceated is `rodanew` :
+Assuming the symlink you created is `rodanew` :
 
 - `cd` in the directory where you want to create your app
 
@@ -70,7 +72,7 @@ Assuming the symlink you ceated is `rodanew` :
 
 If you use Rodauth, `cd` into your newly created app and run :
 - `$ rake db:migrate`
-- `$ rake db:seed` (optionnal)
+- `$ rake db:seed` (optional)
 - `$ rake` (runs the tests to confirm the Rodauth setup is working)
 
 Otherwise just run :
@@ -91,7 +93,7 @@ A basic rake `test` task is provided. It creates two apps (with and without Roda
 
 After testing, both app directories are removed.
 
-Tests assumes a postgresql database named `rodagen_test`, and the `ENV` variable `PG_CREDENTIALS` being set.
+Tests assumes a postgresql database named `rodagen_test`, with citext extension, and the `ENV` variable `PG_CREDENTIALS` being set.
 
 # Licence
 
