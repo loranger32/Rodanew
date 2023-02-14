@@ -93,7 +93,7 @@ A basic rake `test` task is provided. It creates two apps (with and without Roda
 
 After testing, both app directories are removed.
 
-Tests assumes a postgresql database named `rodagen_test`, with citext extension, and the `ENV` variable `PG_CREDENTIALS` being set.
+Tests of the Rodauth app assume two postgresql database named `rodagen_development` and `rodagen_test`, with citext extension, and the `ENV` variable `PG_CREDENTIALS` being set.
 
 # Licence
 
