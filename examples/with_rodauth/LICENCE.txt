@@ -1,6 +1,6 @@
 With_rodauth - MIT License
 
-Copyright (c) 2022 - example_user
+Copyright (c) 2023 - example_user
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
